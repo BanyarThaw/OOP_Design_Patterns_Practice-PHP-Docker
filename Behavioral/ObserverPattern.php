@@ -1,3 +1,3 @@
 <?php
-    // observer pattern
+    echo "this is observer pattern";
 ?>

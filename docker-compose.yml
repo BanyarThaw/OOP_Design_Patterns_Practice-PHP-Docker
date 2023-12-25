@@ -1,0 +1,18 @@
+version: '3'
+
+networks:
+  design-patterns-practice:
+
+services:
+  php_apache:
+    build:
+      context: ./dockerfiles
+      dockerfile: php_apache.dockerfile
+    container_name: php_apache-design-patterns-practice
+    volumes:
+      - "./:/var/www/html" # sync project dir with container web dir
+    ports:
+      - 80:80
+      - 443:443 # for future ssl traffic
+    networks:
+      - design-patterns-practice
